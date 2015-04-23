@@ -1,7 +1,14 @@
 // JavaScript Document
-function processPath(){
+function parsePath(path){
 	//先对path进行处理
-	
+	//var path="M10,10,L20,20,L30,30z";
+	path=path||[];
+	var arr=path.split(/[a-z|A-Z| |,]/g);
+	console.log("arr",arr);
+}
+
+function path(){/**/
+
 }
 
 
@@ -36,6 +43,9 @@ module.exports=process;
 
 function test(){
 	/**/
+	var path="M10,10,L20,20,L30,30z";
+	var result=parsePath(path);
+	console.log("result",result);
 }
 
 test();
