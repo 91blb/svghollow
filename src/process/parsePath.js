@@ -3,9 +3,31 @@ function parsePath(path){
 	//先对path进行处理
 	//var path="M10,10,L20,20,L30,30z";
 	path=path||[];
-	var arr=path.split(/[a-z|A-Z| |,]/g);
-	console.log("arr",arr);
+	//for(var i=0;i<path.length;i+=)
+	//var arr=path.split(/[a-z|A-Z| |,]/g);
+	var arr=spiltPoint(path);
+	//console.log("arr",arr);
 }
+function spiltPoint(str){
+	str=str.replace(","," ");
+	str=str.replace("-"," -");
+	str=str.replace(/([a-z|A-Z])/g,"$1 ");
+	//var arr=[];
+	var arr=str.match(/[a-z|A-Z][0-9|-|\.| ]*/g);
+	//var arr=
+	console.log(arr);
+	arr.forEach(parsePoint);
+	//return arr;
+}
+function parsePoint(str){
+	//console.log(arguments);
+	console.log("parse point",str);
+	//console.log("split",str.split);
+	var arr=str.split(/\s+/g);
+	console.log("arr",arr);
+	if(arr[0].charCodeAt[0])
+}
+
 
 function path(){/**/
 
